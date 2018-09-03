@@ -1,12 +1,13 @@
-//window.onload = createTable;
+$(document).ready = createTable();
 
-var board = new arrayBi (7); 
+var board = document.getElementById("board");
+var arrayBi = []; 
 
-function createTable() {
-    var 
-    for (var i=0; i<7; i++) {
-        for (var j=0; j<7; j++){
-            board [i][j] = 0;
+function createTable(arrayBi) {
+    for (var i=0; i<7; i++) {       //rows
+        for (var j=0; j<7; j++){    //columns    
+            board[i][j];
         }
     }
 }
+$("#board").append("<div class=spaceBoard></div>");
