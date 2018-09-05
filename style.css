@@ -1,14 +1,34 @@
-/* #board {
+body {
     width: 1200px;
     height: 1200px;
     background-color: blueviolet;
-    
 }
-
+.main-container{
+    width: 940px;
+    margin-top: 40px;
+}
 li {
     border: 1px solid aquamarine;
-    margin: 20px 100px 0 50px;
+    /* margin: 20px 100px 0 50px; */
     height: 25px;
     float: left;
-    
-} */
+    width: 140px;
+    height: 130px;
+    list-style: none;
+} 
+.main-container ul li span{
+    float: right;
+    margin: 10px;
+}
+.player {
+    width: 25px;
+    height: 25px;
+}
+
+#playerone {
+    background-color: blue;
+}
+
+#playertwo {
+    background-color: red;
+}
