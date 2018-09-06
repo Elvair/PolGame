@@ -32,3 +32,58 @@ li {
 #playertwo {
     background-color: red;
 }
+
+#p5 {
+    background-image: url("foto1.jpg");
+    background-size: cover;
+}
+
+#p10 {
+    background-image: url("foto3.jpg");
+    background-size: cover;
+}
+
+#p15 {
+    background-image: url("foto4.jpg");
+    background-size: cover;
+}
+
+#p20 {
+    background-image: url("foto7.jpg");
+    background-size: cover;
+}
+
+#p25 {
+    background-image: url("foto8.jpg");
+    background-size: cover;
+}
+
+#p30 {
+    background-image: url("foto10.jpg");
+    background-size: cover;
+}
+
+#p6 {
+    background-image: url("bridgenerja.jpg");
+    background-size: cover;
+}
+
+#p12 {
+    background-image: url("puente2.jpeg");
+    background-size: cover; 
+}
+
+#p22 {
+    background-image: url("posada1.jpg");
+    background-size: cover;
+}
+
+#p28 {
+    background-image: url("pozo1.jpg");
+    background-size: cover;    
+}
+
+#p31 {
+    background-image: url("calavera3.jpg");
+    background-size: cover;
+}

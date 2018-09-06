@@ -1,3 +1,7 @@
+//Otra solución para hacer tablero
+
+
+
 // $(document).ready (createTable();
 
 $(document).ready(function () {
@@ -10,11 +14,11 @@ $(document).ready(function () {
 console.log('pepe')
 
 function createTable() {
-    var arrayBi = new Array (7);
+    var arrayBi = new Array (6);
 
     for (var i = 0; i < 7; i++) { 
-        arrayBi[i] = new Array (7);      //rows
-        for (var j = 0; j < 7; j++) {
+        arrayBi[i] = new Array (6);      //rows
+        for (var j = 0; j < 6; j++) {
             console.log('board dentro: ', arrayBi);  //columns    
             arrayBi[i];
         }

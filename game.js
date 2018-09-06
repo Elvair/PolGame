@@ -6,65 +6,102 @@ var players = {
 }
 
 var pols = {
-    p5: 10,
-    p10: 15,
-    p15: 20,
-    p20: 30
+    "p5": 10,
+    "p10": 15,
+    "p15": 20,
+    "p20": 25,
+    "p25": 30
 }
 
 var bridge = {
-    p6: 12
+    "p6": 12
 }
 
 var death = {
-    p31: 0
+    "p31": 1
 }
+
+/*************** Funciones de casillas especiales ***************/
 
 function isPol() { 
     var pol = false;
     if (pols['p' + players[players.currentPlayer].currentPosition] != undefined) {
         pol = true;
         players[players.currentPlayer].currentPosition = pols['p' + players[players.currentPlayer].currentPosition];
+
     }
     return pol;
 }
 
 function isBridge() {
     if (bridge['p' + players[players.currentPlayer].currentPosition] != undefined) {
+        $("#messages").append('<div class="bridgeText">De puente a puente, avanzas porque te lleva la corriente</div>');
         players[players.currentPlayer].currentPosition = bridge['p' + players[players.currentPlayer].currentPosition];
     }
-    return ("De puente a puente, tiras porque te lleva la corriente");
 }
 
 function isDeath() {
+var deaths = false;
     if (death['p' + players[players.currentPlayer].currentPosition] != undefined) {
+        deaths = true;
         players[players.currentPlayer].currentPosition = death['p' + players[players.currentPlayer].currentPosition];
     }
-    
-}
+    return deaths;
+ }
+
+/*************** Lanzar dado y mostrar número ***************/
 
 function rollDice() {
     var dice = Math.ceil(Math.random()*6);
+    $("#messages").empty();
     $('#dice_value').text(dice);
     return dice;
 }
 
+/*************** Empezar juego y reStart ***************/
+
 function startGame() {
+    $(".player").remove(); /***** Por si ya hubiese empezado la partida, para resetearla ******/
     $('#p1').append('<div class="player" id="playerone"></div>');
     $('#p1').append('<div class="player" id="playertwo"></div>');
 
 }
 
+/*************** Mover al jugador actual las casillas que marque el dado ***************/
+
 function movePlayer() {
-    players[players.currentPlayer].currentPosition += rollDice();
+    players[players.currentPlayer].currentPosition += rollDice(); 
+
     $('#player' + players.currentPlayer).remove();
-    $('#p' + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>')
+    $('#p' + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>');
+    
     isBridge();
-    isDeath();
-    if (!isPol()){
+    if (isPol()) {
+        $("#messages").append('<div class="locaText">De loca a loca y tiras porque te toca </div>');
+    }
+
+    //if (isBridge()) {
+    //    
+    //    alert ("De puente a puente, avanzas porque te lleva la corriente");
+    //}
+
+    if (!isPol()) {
         changeTurn();
     }
+
+    if (isDeath()) {
+        $("#player" + players.currentPlayer).remove();
+        $("#p" + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>');
+        $("#messages").append('<div class="diedText">Has muerto! Pol está muy enfadada contigo!!</div>');
+    }
+
+    if (checkIfWin()) {
+        $("#messages").append('<div class="winText">Has ganado! Y Pol está muy feliz!!</div>');
+        //alert ("Has ganado! " + players.currentPlayer + "Y Pol está muy feliz!!");
+    }
 }
+
+/*************** Cambio de turno entre jugadores ***************/
 
 function changeTurn() {
     if (players.currentPlayer == "one") {
@@ -74,11 +111,22 @@ function changeTurn() {
     }
 }
 
+/*************** Fin y reStart ***************/
+
 function gameOver() {
-    alert ("Has muerto! Pol está muy enfadada contigo!!");
-    currentPosition = 0;
-    location.reload();
+    
+    startGame();
+    players.currentPlayer = "one";
+    players.one.currentPosition = 1;
+    players.two.currentPosition = 1;
+
 }
+
+function checkIfWin() {
+    if (players[players.currentPlayer].currentPosition == 35) {
+        gameOver();  
+    }
+}    
     
 $(document).ready(function() {
     startGame();
@@ -86,4 +134,4 @@ $(document).ready(function() {
         movePlayer();
     });
     
-});    
+});
