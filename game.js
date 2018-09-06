@@ -71,6 +71,11 @@ function startGame() {
 
 function movePlayer() {
     players[players.currentPlayer].currentPosition += rollDice(); 
+    
+    if (players[players.currentPlayer].currentPosition > 35) { /* Para rebotar en la última casilla*/
+        var backPositions = players[players.currentPlayer].currentPosition - 35;
+        players[players.currentPlayer].currentPosition = 35 - backPositions;
+      }
 
     $('#player' + players.currentPlayer).remove();
     $('#p' + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>');
@@ -93,7 +98,8 @@ function movePlayer() {
         $("#player" + players.currentPlayer).remove();
         $("#p" + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>');
         $("#messages").append('<div class="diedText">Has muerto! Pol está muy enfadada contigo!!</div>');
-    }
+        gameOver();
+    }   
 
     if (checkIfWin()) {
         $("#messages").append('<div class="winText">Has ganado! Y Pol está muy feliz!!</div>');
