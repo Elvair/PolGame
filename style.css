@@ -20,9 +20,15 @@ li {
     float: right;
     margin: 10px;
 }
+
 .player {
     width: 25px;
     height: 25px;
+}
+
+.noSpecial {
+    background-image: url("cespedverde.jpg");
+    background-size: cover; 
 }
 
 #playerone {
@@ -44,7 +50,7 @@ li {
 }
 
 #p15 {
-    background-image: url("foto4.jpg");
+    background-image: url("foto6.jpg");
     background-size: cover;
 }
 
@@ -59,7 +65,7 @@ li {
 }
 
 #p30 {
-    background-image: url("foto10.jpg");
+    background-image: url("foto4.jpg");
     background-size: cover;
 }
 

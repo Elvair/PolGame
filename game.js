@@ -35,8 +35,8 @@ function isPol() {
 
 function isBridge() {
     if (bridge['p' + players[players.currentPlayer].currentPosition] != undefined) {
-        $("#messages").append('<div class="bridgeText">De puente a puente, avanzas porque te lleva la corriente</div>');
         players[players.currentPlayer].currentPosition = bridge['p' + players[players.currentPlayer].currentPosition];
+        $("#messages").append('<div class="bridgeText">De puente a puente, avanzas porque te lleva la corriente</div>');
     }
 }
 
