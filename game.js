@@ -85,11 +85,6 @@ function movePlayer() {
         $("#messages").append('<div class="locaText">De loca a loca y tiras porque te toca </div>');
     }
 
-    //if (isBridge()) {
-    //    
-    //    alert ("De puente a puente, avanzas porque te lleva la corriente");
-    //}
-
     if (!isPol()) {
         changeTurn();
     }
