@@ -1,0 +1,108 @@
+body {
+    width: 1200px;
+    height: 1200px;
+    background-color: blueviolet;
+    color: aquamarine;
+    font-weight: bold;
+}
+.main-container{
+    width: 940px;
+    margin-top: 40px;
+}
+li {
+    border: 1px solid aquamarine;
+    height: 25px;
+    float: left;
+    width: 140px;
+    height: 130px;
+    list-style: none;
+} 
+.main-container ul li span{
+    float: right;
+    margin: 10px;
+}
+
+.player {
+    width: 25px;
+    height: 25px;
+}
+
+.noSpecial {
+    background-image: url("../img/cespedverde.jpg");
+    background-size: cover; 
+}
+
+#playerone {
+    background-color: blue;
+}
+
+#playertwo {
+    background-color: red;
+}
+
+#board{
+    width:500px;
+}
+
+#p5 {
+    background-image: url("../img/pol.jpg");
+    background-size: cover;
+}
+
+#p10 {
+    background-image: url("../img/pol2.jpg");
+    background-size: cover;
+}
+
+#p15 {
+    background-image: url("../img/pol3.jpg");
+    background-size: cover;
+}
+
+#p20 {
+    background-image: url("../img/pol4.jpg");
+    background-size: cover;
+}
+
+#p25 {
+    background-image: url("../img/pol5.jpg");
+    background-size: cover;
+}
+
+#p30 {
+    background-image: url("../img/pol6.jpg");
+    background-size: cover;
+}
+
+#p6 {
+    background-image: url("../img/bridgenerja.jpg");
+    background-size: cover;
+}
+
+#p12 {
+    background-image: url("../img/bridge2.jpeg");
+    background-size: cover;
+}
+
+#p31 {
+    background-image: url("../img/calavera3.jpg");
+    background-size: cover;
+} 
+
+#p35 {
+    background-image: url("../img/meta.jpg");
+    background-size: cover;    
+}
+#dice {
+    width: 20px;
+    height: 20px;
+    margin-left: 937px;
+} 
+#dice img{
+    width: 117px;
+    margin-top: 400px;
+
+}
+#dice_value {
+    font-size: 68px;
+}

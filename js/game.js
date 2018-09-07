@@ -81,6 +81,8 @@ function movePlayer() {
     $('#p' + players[players.currentPlayer].currentPosition).append('<div class="player" id="player' + players.currentPlayer + '"></div>');
     
     isBridge();
+    checkIfWin();
+
     if (isPol()) {
         $("#messages").append('<div class="locaText">De loca a loca y tiras porque te toca </div>');
     }
@@ -96,10 +98,6 @@ function movePlayer() {
         gameOver();
     }   
 
-    if (checkIfWin()) {
-        $("#messages").append('<div class="winText">Has ganado! Y Pol está muy feliz!!</div>');
-        //alert ("Has ganado! " + players.currentPlayer + "Y Pol está muy feliz!!");
-    }
 }
 
 /*************** Cambio de turno entre jugadores ***************/
@@ -125,13 +123,14 @@ function gameOver() {
 
 function checkIfWin() {
     if (players[players.currentPlayer].currentPosition == 35) {
+        $("#messages").append('<div class="winText">Has ganado! Y Pol está muy feliz!!</div>');
         gameOver();  
     }
 }    
     
 $(document).ready(function() {
     startGame();
-    $('#dice button').click(function(){
+    $('#dice img').click(function(){
         movePlayer();
     });
     
